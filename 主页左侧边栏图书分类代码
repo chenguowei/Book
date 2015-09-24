@@ -1,0 +1,15 @@
+<div style="border:1px solid #008080;">
+    <h3 class="text-center">图书分类</h3><hr>
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active text-center" style="font-size:20px;"><a href="#">小说</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">文艺</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">青春</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">童书</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">教育</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">科技</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">生活</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">历史</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">管理</a></li>
+      <li role="presentation" class="text-center" style="font-size:16px;"><a href="#" style="color:#008080;">军事</a></li>
+    </ul>
+</div>

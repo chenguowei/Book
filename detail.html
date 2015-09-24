@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>图书详细信息</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+
+      a{
+        color: #000;
+      }
+      
+      body{
+        padding-top: 60px;
+      }
+      
+      .sidebar{
+        position: absolute;
+        right: 30px;
+        top: 60px;
+        padding-top: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+        background: #fffafa;
+        width: 180px;
+      }
+
+      .col-md-2 img{
+        margin-top: 10px;
+      }
+
+      #footer{
+        margin-top:10px;
+        padding:15px 0;
+        width:100%;
+        text-align:center;
+        border-top:1px solid #e6e6e6;
+        background:#f8f8f8;
+      }
+
+      #footer li{
+        list-style: none;
+        line-height:24px;
+        color:#9e9e9e;
+        font-size:12px;
+      }
+
+      .sidebar_book{
+        padding-bottom: 10px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- 导航条 -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">图书管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="home_page.html" target="_blank">首页<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="#">分类</a></li>
+            <li class="disabled"><a href="#">管理</a></li><!-- 当游客选中此项时会链接到本页面，不会链接到管理页面 -->
+            <li><a data-toggle="modal" href="#briefModal">简介</a></li>
+            <li><a data-toggle="modal" href="#contactModal">联系我们</a></li>
+          </ul>
+
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="你想找什么书...">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+
+          <form class="navbar-form navbar-right" role="admin-login">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">管理员登录</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- 简介modal -->
+    <div class="modal fade" id="briefModal" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">简介</h3>
+          </div><!-- header -->
+
+          <div class="modal-body">
+            <p>
+              这段文字是我自己瞎编的，至于内容是什么你就不要看了，如果你真的执意非要看下去的话我也没有办法，不过我还是要提醒你，无论你再怎么看，这段文字依然是没有任何意义的，好吧，简介就到这了。
+            </p>
+          </div><!-- body -->
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div><!-- footer -->
+        </div><!-- content -->
+      </div><!-- dialog -->
+    </div><!-- 简介modal -->
+
+    <!-- 联系我们modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">联系我们</h3>
+          </div><!-- header -->
+
+          <div class="modal-body">
+            <p>
+               我才不会告诉你组长的电话号码是18986194487呢。
+            </p>
+          </div><!-- body -->
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div><!-- footer -->
+        </div><!-- content -->
+      </div><!-- dialog -->
+    </div><!-- 联系我们modal -->
+
+    <!-- 管理员登录modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">管理员登录</h3>
+          </div>
+
+          <form>
+
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="control-label">用户名</label>
+                <input id="username" type="text" name="username" class="form-control" placeholder="用户名" required autofocus/>
+                <span class="label label-warning" id="username_msg"></span>
+              </div>
+              <div class="form-group">
+                <label class="control-label">密码</label>
+                <input id="password" type="text" name="password" class="form-control" placeholder="密码"/>
+                <span class="label label-warning" id="password_msg"></span>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">登录</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> <!-- 管理员登录modal -->
+
+    <div class="container">
+      <!-- 主体内容 -->
+      <div class="col-md-10">
+        <!-- 图书基本信息 -->
+        <div class="row">
+          <!-- 图片 -->
+          <div class="col-md-5 col-md-pull-1">
+            <img src="detail_img/book1.jpg" width="450" height="450" alt="...">
+          </div>
+
+          <!-- 文本信息 -->
+          <div class="col-md-7">
+
+            <h3><strong>一个人的朝圣2：奎妮的情歌</strong></h3>
+            <h4 class="text-muted"><strong>
+              布克奖入围作品《一个人的朝圣》相伴之作。献给每一次对生命微小瞬间的朴素歌唱，对自我的照见，对爱的回归。
+            </strong></h4>
+            <hr>
+
+            <div class="col-md-2">
+              <h5>作者</h5>
+              <h5>出版社</h5>
+              <h5>出版时间</h5>
+              <h5>ISBN</h5>
+              <h5>所属分类</h5>
+              <h5>版次</h5>
+              <h5>印刷时间</h5>
+              <h5>印次</h5>
+              <h5>页数</h5>
+              <h5>开本</h5>
+              <h5>包装</h5>
+            </div>
+
+            <div class="col-md-10">
+              <h5>（英）蕾秋·乔伊斯 著，袁田 译</h5>
+              <h5>北京联合公司</h5>
+              <h5>2015-8-1</h5>
+              <h5>9787550249202</h5>
+              <h5>文学</h5>
+              <h5>1</h5>
+              <h5>2015-8-1</h5>
+              <h5>1</h5>
+              <h5>352</h5>
+              <h5>32开</h5>
+              <h5>平装</h5>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- 图书详细信息 -->
+        <div class="row">
+          <!-- 编辑推荐 -->
+          <div class="row">
+            <div class="content">
+            <h3 style="color:#008080;">编辑推荐</h3>
+            <hr style="border:2px solid orange;">
+            <p>
+              2013－2015年触动万千读者的热销书，布克奖入围作品《一个人的朝圣》相伴之作。<br>
+              “我写的不是《一个人的朝圣》的续集，也不是一部前传。我写的这一本书，它和哈罗德弗莱比肩而坐。我会把这本书称为，一个伴儿。”——本书作者 蕾秋乔伊斯<br>
+              英、德、美、意等国相继重磅上市，各国书店重点码堆，掀起阅读热潮，美国亚马逊读者五星好评推荐，《人物周刊》《英国卫报》《每日电讯报》《华盛顿邮报》等权威媒体热推，红遍欧美各国。<br>
+              这是《一个人的朝圣》故事的另一面。这是哈罗德627公里旅程的另一端，奎妮的诉说和告别。当哈罗德开始旅程的同时，奎妮的旅程也开始了。哈罗德被成千上万的人爱着，奎妮也一样。<br>
+              关于如何处理痛苦，如何爱，如何休息和放松；关于一个人看见另一个人，给予，我是谁，以及我们已遗忘的爱。引发你我深层的共鸣，一如《一个人的朝圣》。<br>
+            </p>
+            </div>
+          </div>
+          
+          <!-- 内容推荐 -->
+          <div class="row">
+            <div class="content">
+              <h3 style="color:#008080;">内容推荐</h3>
+              <hr style="border:2px solid orange;">
+              <p>
+                在《一个人的朝圣》里，65岁的哈罗德，87天行走627英里，只为了一个信念：只要他在走，奎妮就会活下来。
+                这是故事的另一面，这是奎妮，这里有一个埋藏了20年的秘密，有生命中无数的微小瞬间，有温暖的大手，坐在车里的对话，海上的花园。如何处理痛苦，如何爱，如何休息和放松，如何相处，“因为同一样东西发笑也可以是另一种在一起的方式”。当哈罗德开始旅程的同时，奎妮的旅程也开始了。他们因此各自变得完整。
+                “跟哈罗德一样，奎妮有其阳光和黑暗的一面，但当故事结束，合上书本，作者巧妙地让黑暗消失了，挥之不去的是奎妮坚定的爱的光芒。”
+                没错，奎妮的情歌是来帮助我们的。
+              </p>
+            </div>
+          </div>
+          
+          <!-- 作者简介 -->
+          <div class="row">
+            <div class="content">
+              <h3 style="color:#008080;">作者简介</h3>
+              <hr style="border:2px solid orange;">
+              <p>
+                蕾秋乔伊斯
+                英国BBC资深剧作家，《星期日泰晤士报》专栏作者。作为剧作家，于2007年获Tinniswood最佳广播剧奖。她还在皇家莎士比亚剧团、皇家国家剧院担任主要角色。
+                乔伊斯于二十年的舞台剧和电视职业生涯之后转向写作，2012年出版小说《一个人的朝圣》，该书入围2012年布克文学奖及英联邦书奖，目前已畅销三四十个国家。2013年出版小说《完美》，2014年出版《一个人的朝圣》相伴之作《一个人的朝圣2：奎妮的情歌》，继续掀起阅读热潮。以上图书由大鱼读品陆续引进出版。
+              </p>
+            </div>
+          </div>
+          
+          <!-- 需要什么板块再加 -->
+          <div class="row">
+            
+          </div>
+
+        </div><!-- 图书详细信息 -->
+      </div><!-- 主体内容 -->
+      
+      <!-- 同类图书 -->
+      <div class="col-md-2 sidebar">
+        
+        <h3>同类图书推荐</h3>
+        <hr>
+        <div class="sidebar_book">
+          <a href="#" title="我的晃荡的青春"><img src="detail_img/book2.jpg" class="sidebar_img"></a>
+        </div>
+        <div>
+          <a href="#">我的晃荡的青春</a>
+          <br>
+          <small class="text-muted">东野圭吾</small>
+          <!-- 简介 -->
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="sidebar_book">
+          <a href="#" title="我的晃荡的青春"><img src="detail_img/book2.jpg" class="sidebar_img"></a>
+        </div>
+        <div>
+          <a href="#">我的晃荡的青春</a>
+          <br>
+          <small class="text-muted">东野圭吾</small>
+          <!-- 简介 -->
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="sidebar_book">
+          <a href="#" title="我的晃荡的青春"><img src="detail_img/book2.jpg" class="sidebar_img"></a>
+        </div>
+        <div>
+          <a href="#">我的晃荡的青春</a>
+          <br>
+          <small class="text-muted">东野圭吾</small>
+          <!-- 简介 -->
+          <p>
+            
+          </p>
+        </div>
+
+        <div class="sidebar_book">
+          <a href="#" title="我的晃荡的青春"><img src="detail_img/book2.jpg" class="sidebar_img"></a>
+        </div>
+        <div>
+          <a href="#">我的晃荡的青春</a>
+          <br>
+          <small class="text-muted">东野圭吾</small>
+          <!-- 简介 -->
+          <p>
+            
+          </p>
+        </div>
+
+      </div>
+    </div><!-- container -->
+
+    <!-- 版权信息 -->
+    <div id="footer">
+      <ul>
+        <li>Copyright © 2015 - 2015 sixunguidiao. All Rights Reserved.</li>
+        <li>**公司 版权所有</li>
+      </ul>
+    </div> 
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
