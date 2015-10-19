@@ -1,0 +1,131 @@
+a{
+  color: #000;
+}
+a:focus{
+  outline:none;
+}
+body{
+  padding-top: 60px;
+}
+hr{
+  border:1px solid #008080;
+}
+h3{
+  font-weight: bold;
+}
+.wrap
+{
+  width: 1000px;
+  margin: 0 auto;
+}
+.row{
+  margin-top: 50px;
+}
+.ad
+{
+  height: 310px;
+  overflow:hidden;
+}
+.notice_info{
+  position: relative;
+}
+.notice_info ul li{
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+}
+.news_info{
+  position: relative;
+}
+.news_info ul li{
+  position: absolute;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-size: 13px;
+}
+.new_books{
+  text-align: center;
+  overflow: hidden;
+  margin-top: 30px;
+  padding-top: 0px;
+  padding-left: 0px;
+}
+.new_book{
+  width: 25%;
+  height: 240px;
+  float: left;
+}
+.book_title{
+  overflow: hidden;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 35px;
+  width: 100px;
+  height: 40px;
+}
+.book_author{
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+  height: 25px;
+}
+.hot{
+  margin-top: 27px;
+}
+.top_book{
+  position: relative;
+  height: 45px;
+  border-bottom: 1px dotted #ccc;
+}
+.top_book span{
+  position: absolute;
+  top: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+span.label_top{
+  left: 0px;
+  color: red;
+  font-weight: bold;
+}
+span.label_other{
+  left: 0px;
+  color: #000;
+}
+span.book_name{
+  display: block;
+  height: 25px;
+  overflow:  hidden;
+  margin-left: 30px;
+}
+span.author{
+  right: 0px;
+  font-size: 14px;
+  color: #999;
+}
+.recommend_books{
+  text-align: center;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  overflow: hidden;
+}
+.recommend_book{
+  width: 20%;
+  float: left;
+  padding: 10px 15px;
+}
+#footer{
+  margin-top:10px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #e6e6e6; background:#f8f8f8;
+}
+#footer li{
+  list-style: none;
+  line-height: 24px;
+  color: #9e9e9e;
+  font-size: 12px;
+}

@@ -1,0 +1,25 @@
+.wrap{
+  position: absolute;
+  width: 500px;
+  margin-left: 300px;
+  top: 10px;
+}
+/* .back{
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+} */
+.list{
+  position: relative;
+  top: 20px;
+}
+.list_left{
+  padding-right: 0px;
+}
+.list_right{
+  padding-left: 0px;
+}
+.text{
+  margin-left: 1px;
+  margin-right: 1px;
+}

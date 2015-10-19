@@ -1,0 +1,23 @@
+body{
+  padding-top:30px;
+}
+th{
+  text-align: center;
+}
+td{
+  text-align: center;
+}
+a{
+  color: #0066ff;
+}
+/* 去除链接被选中时出现的边框 */
+a:focus{
+	outline:none;
+}
+.sidebar{
+  background-color: #f5f5f5;
+  margin-top: 30px;
+}
+.sidebar a{
+	color: #000;
+}
